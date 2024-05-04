@@ -1,16 +1,25 @@
+import { Route, Routes } from 'react-router-dom';
+
+import CamperList from 'pages/CamperList/CamperList';
+import Favorite from 'pages/Favorite/Favorite';
+import Home from 'pages/Home/Home';
+import Navigation from './Navigation/Navigation';
+import CamperDetails from 'pages/CamperDetails/CamperDetails';
+import Features from './Features/Features';
+import Reviews from './Reviews/Reviews';
+
 export default function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="campers" element={<CamperList />} />
+        <Route path="campers/:camperId" element={<CamperDetails />}>
+          <Route path="features" element={<Features />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+        <Route path="favorite" element={<Favorite />} />
+      </Route>
+    </Routes>
   );
 }
