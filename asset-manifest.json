@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Campervans-project/static/css/main.7acaea2f.css",
+    "main.js": "/Campervans-project/static/js/main.a2b5ebb9.js",
+    "index.html": "/Campervans-project/index.html",
+    "main.7acaea2f.css.map": "/Campervans-project/static/css/main.7acaea2f.css.map",
+    "main.a2b5ebb9.js.map": "/Campervans-project/static/js/main.a2b5ebb9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.a2b5ebb9.js"
+  ]
+}
