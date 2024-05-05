@@ -13,12 +13,12 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="campers" element={<CamperList />} />
-        <Route path="campers/:camperId" element={<CamperDetails />}>
+        <Route path="catalog" element={<CamperList />} />
+        <Route path="catalog/:camperId" element={<CamperDetails />}>
           <Route path="features" element={<Features />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
-        <Route path="favorite" element={<Favorite />} />
+        <Route path="favorites" element={<Favorite />} />
       </Route>
     </Routes>
   );
