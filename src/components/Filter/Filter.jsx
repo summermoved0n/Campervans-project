@@ -23,6 +23,7 @@ export default function Filter() {
           <input type="checkbox" />
           Kitchen
         </label>
+        <br />
         <label>
           <input type="checkbox" />
           TV

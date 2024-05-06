@@ -1,0 +1,21 @@
+.camper_catalog {
+  display: flex;
+  gap: 20px;
+}
+
+.title_conteiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price_conteiner {
+  display: flex;
+  gap: 5px;
+}
+
+.description_text {
+  width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
