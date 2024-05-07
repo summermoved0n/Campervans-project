@@ -1,21 +1,13 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { Transition } from 'react-transition-group';
 import { IoIosClose } from 'react-icons/io';
 
 import css from './Modal.module.css';
-import { useLocation } from 'react-router-dom';
 
 export default function Modal({ isOpen, onClose, children }) {
-  const location = useLocation();
-  const refLocation = useRef(location.state?.from ?? '/catalog');
-
-  console.log(location);
-  console.log(refLocation);
-
   const onWrapperClick = e => {
     if (e.target.classList.contains(css.modal_wrapper)) {
       onClose();
-      window.history.back();
     }
   };
 
@@ -23,7 +15,6 @@ export default function Modal({ isOpen, onClose, children }) {
     const onKeyDown = e => {
       if (e.key === 'Escape') {
         onClose();
-        window.history.back();
       }
     };
 
@@ -47,10 +38,8 @@ export default function Modal({ isOpen, onClose, children }) {
               <div className={css.modal_content}>
                 <button
                   className={css.close_btn}
-                  to={refLocation.current}
                   onClick={() => {
                     onClose();
-                    window.history.back();
                   }}
                 >
                   <IoIosClose size={16} />

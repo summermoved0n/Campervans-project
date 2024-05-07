@@ -6,3 +6,8 @@ export async function getAllAdverts() {
   const { data } = await axios.get('adverts');
   return data;
 }
+
+export async function getAdvertById(id) {
+  const { data } = await axios.get(`adverts/${id}`);
+  return data;
+}

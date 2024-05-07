@@ -1,11 +1,13 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 
-import { getAdvertsThunk } from './advertsOperations';
+import { getAdvertsThunk, getAdvertByIdThunk } from './advertsOperations';
 
 const initialState = {
   adverts: {
     catalog: [],
     isModalOpen: false,
+    modalItemId: null,
+    modalContent: {},
     isLoading: false,
     error: null,
   },
@@ -23,8 +25,10 @@ const advertsSlice = createSlice({
       state.favorites = state.favorites.filter(item => item._id !== payload);
     },
     toggleModalWindow(state, { payload }) {
-      console.log(payload);
       state.adverts.isModalOpen = payload;
+    },
+    recordModalId(state, { payload }) {
+      state.adverts.modalItemId = payload;
     },
   },
   extraReducers: builder => {
@@ -33,17 +37,32 @@ const advertsSlice = createSlice({
         state.adverts.catalog = payload;
         state.isLoading = false;
       })
-      .addMatcher(isAnyOf(getAdvertsThunk.pending), state => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addMatcher(isAnyOf(getAdvertsThunk.rejected), (state, { payload }) => {
+      .addCase(getAdvertByIdThunk.fulfilled, (state, { payload }) => {
+        state.adverts.modalContent = { ...payload };
         state.isLoading = false;
-        state.error = payload;
-      });
+      })
+      .addMatcher(
+        isAnyOf(getAdvertsThunk.pending, getAdvertByIdThunk.pending),
+        state => {
+          state.isLoading = true;
+          state.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(getAdvertsThunk.rejected, getAdvertByIdThunk.rejected),
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.error = payload;
+        }
+      );
   },
 });
 
-export const { addToFavorites, removeFromFavorites, toggleModalWindow } =
-  advertsSlice.actions;
+export const {
+  addToFavorites,
+  removeFromFavorites,
+  toggleModalWindow,
+  recordModalId,
+} = advertsSlice.actions;
+
 export const advertsReducer = advertsSlice.reducer;

@@ -1,25 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa6';
-import { Link, Outlet } from 'react-router-dom';
 
 import css from './CamperListItems.module.css';
 import { getAdvertsThunk } from '../../redux/advert/advertsOperations';
 import {
   selectAllAdverts,
   selectFavorites,
+  selectOpenModal,
 } from '../../redux/advert/advertsSelectors';
 import {
   addToFavorites,
   removeFromFavorites,
   toggleModalWindow,
+  recordModalId,
 } from '../../redux/advert/advertsSlice';
+import CamperDetails from 'pages/CamperDetails/CamperDetails';
 
 export default function CamperListItems() {
   const dispatch = useDispatch();
   const adverts = useSelector(selectAllAdverts);
   const favorites = useSelector(selectFavorites);
+  const modalOpen = useSelector(selectOpenModal);
 
   useEffect(() => {
     dispatch(getAdvertsThunk());
@@ -38,7 +41,6 @@ export default function CamperListItems() {
 
   return (
     <>
-      <Outlet />
       {adverts.map(
         ({
           _id,
@@ -98,18 +100,20 @@ export default function CamperListItems() {
                   <li>{details.airConditioner && 'AC'}</li>
                 </ul>
               </div>
-              <Link
-                to={`/catalog/${_id}`}
+              <button
+                type="button"
                 onClick={() => {
+                  dispatch(recordModalId(_id));
                   dispatch(toggleModalWindow(true));
                 }}
               >
                 Show more
-              </Link>
+              </button>
             </div>
           </div>
         )
       )}
+      {modalOpen && <CamperDetails />}
     </>
   );
 }
