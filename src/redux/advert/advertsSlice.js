@@ -5,6 +5,7 @@ import { getAdvertsThunk } from './advertsOperations';
 const initialState = {
   adverts: {
     catalog: [],
+    isModalOpen: false,
     isLoading: false,
     error: null,
   },
@@ -15,8 +16,15 @@ const advertsSlice = createSlice({
   name: 'adverts',
   initialState,
   reducers: {
-    setFavorites(state, { payload }) {
+    addToFavorites(state, { payload }) {
       state.favorites.push(payload);
+    },
+    removeFromFavorites(state, { payload }) {
+      state.favorites = state.favorites.filter(item => item._id !== payload);
+    },
+    toggleModalWindow(state, { payload }) {
+      console.log(payload);
+      state.adverts.isModalOpen = payload;
     },
   },
   extraReducers: builder => {
@@ -36,5 +44,6 @@ const advertsSlice = createSlice({
   },
 });
 
-export const { setFavorites } = advertsSlice.actions;
+export const { addToFavorites, removeFromFavorites, toggleModalWindow } =
+  advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;

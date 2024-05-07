@@ -13,10 +13,11 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="catalog" element={<CamperList />} />
-        <Route path="catalog/:camperId" element={<CamperDetails />}>
-          <Route path="features" element={<Features />} />
-          <Route path="reviews" element={<Reviews />} />
+        <Route path="catalog" element={<CamperList />}>
+          <Route path="/catalog/:camperId" element={<CamperDetails />}>
+            <Route path="features" element={<Features />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
         </Route>
         <Route path="favorites" element={<Favorite />} />
       </Route>

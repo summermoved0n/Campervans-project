@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa6';
+import { Link, Outlet } from 'react-router-dom';
 
 import css from './CamperListItems.module.css';
 import { getAdvertsThunk } from '../../redux/advert/advertsOperations';
@@ -9,7 +10,11 @@ import {
   selectAllAdverts,
   selectFavorites,
 } from '../../redux/advert/advertsSelectors';
-import { setFavorites } from '../../redux/advert/advertsSlice';
+import {
+  addToFavorites,
+  removeFromFavorites,
+  toggleModalWindow,
+} from '../../redux/advert/advertsSlice';
 
 export default function CamperListItems() {
   const dispatch = useDispatch();
@@ -20,15 +25,20 @@ export default function CamperListItems() {
     dispatch(getAdvertsThunk());
   }, [dispatch]);
 
-  const onHeartClick = id => {
+  const onClickAddFavorite = id => {
     const [favoriteAd] = adverts.filter(advert => advert._id === id);
-    dispatch(setFavorites(favoriteAd));
+    dispatch(addToFavorites(favoriteAd));
+  };
+
+  const onClickRemoveFavorite = id => {
+    dispatch(removeFromFavorites(id));
   };
 
   const isFavorite = id => favorites.some(favorite => favorite._id === id);
 
   return (
     <>
+      <Outlet />
       {adverts.map(
         ({
           _id,
@@ -53,11 +63,17 @@ export default function CamperListItems() {
                 <div className={css.price_conteiner}>
                   <p>€{price}.00</p>
                   {!isFavorite(_id) ? (
-                    <button type="button" onClick={() => onHeartClick(_id)}>
+                    <button
+                      type="button"
+                      onClick={() => onClickAddFavorite(_id)}
+                    >
                       <FaRegHeart size={24} />
                     </button>
                   ) : (
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() => onClickRemoveFavorite(_id)}
+                    >
                       <FaHeart size={24} color="#E44848" />
                     </button>
                   )}
@@ -82,7 +98,14 @@ export default function CamperListItems() {
                   <li>{details.airConditioner && 'AC'}</li>
                 </ul>
               </div>
-              <button type="button">Show more</button>
+              <Link
+                to={`/catalog/${_id}`}
+                onClick={() => {
+                  dispatch(toggleModalWindow(true));
+                }}
+              >
+                Show more
+              </Link>
             </div>
           </div>
         )
