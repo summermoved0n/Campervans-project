@@ -50,7 +50,7 @@ export default function Modal({ isOpen, onClose, children }) {
                   to={refLocation.current}
                   onClick={() => {
                     onClose();
-                    window.history.back() || refLocation.current;
+                    window.history.back();
                   }}
                 >
                   <IoIosClose size={16} />
