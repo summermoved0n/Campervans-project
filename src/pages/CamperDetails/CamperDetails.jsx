@@ -58,7 +58,7 @@ export default function CamperDetails() {
         <hr />
         {showComponentByName === 'features' && (
           <div className={css.show_component_conteiner}>
-            <Features />
+            <Features advert={advert} />
             <BookForm />
           </div>
         )}

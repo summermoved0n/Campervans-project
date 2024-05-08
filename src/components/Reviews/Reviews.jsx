@@ -1,7 +1,6 @@
 import css from './Reviews.module.css';
 
 export default function Reviews({ reviews }) {
-  console.log(reviews);
   const reviewerAvatar = name => {
     const firstLetter = name.slice(0, 1);
     return firstLetter;
