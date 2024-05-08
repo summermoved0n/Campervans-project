@@ -1,5 +1,14 @@
 import css from './Features.module.css';
-import icons from '../Images/sprite.svg';
+import { Adults } from 'Icons/Adults';
+import { AirConditioner } from 'Icons/AirConditioner';
+import { Automatic } from 'Icons/Automatic';
+import { Bed } from 'Icons/Bed';
+import { CompactDisk } from 'Icons/CompactDisk';
+import { Conditioner } from 'Icons/Conditioner';
+import { Cooker } from 'Icons/Cooker';
+import { Kitchen } from 'Icons/Kitchen';
+import { Petrol } from 'Icons/Petrol';
+import { Radio } from 'Icons/Radio';
 
 export default function Features({ advert }) {
   const { adults, details, form, length, width, height, tank, consumption } =
@@ -10,64 +19,44 @@ export default function Features({ advert }) {
     <div>
       <ul>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-users`}></use>
-          </svg>
+          <Adults />
           <span>{adults} adults</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-automatic`}></use>
-          </svg>
+          <Automatic />
           <span>Automatic</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-automatic`}></use>
-          </svg>
+          <AirConditioner />
           <span>AC</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-petrol`}></use>
-          </svg>
+          <Petrol />
           <span>Petrol</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-kitchen`}></use>
-          </svg>
+          <Kitchen />
           <span>kitchen</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-bed`}></use>
-          </svg>
+          <Bed />
           <span>{details.bads} beds</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-air-conditioner`}></use>
-          </svg>
+          <Conditioner />
           <span>{details.airConditioner} air conditioner</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-disk`}></use>
-          </svg>
+          <CompactDisk />
           <span>CD</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-radio`}></use>
-          </svg>
+          <Radio />
           <span>Radio</span>
         </li>
         <li>
-          <svg width={20} height={20}>
-            <use xlinkHref={`${icons}#icon-radio`}></use>
-          </svg>
-          <span>{details.hob} hobs</span>
+          <Cooker />
+          <span>{details.hob} hob</span>
         </li>
       </ul>
       <p>Vehicle details</p>
