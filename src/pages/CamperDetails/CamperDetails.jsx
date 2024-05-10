@@ -1,39 +1,23 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import css from './CamperDetails.module.css';
-import {
-  selectOpenModal,
-  selectModalContent,
-  selectModalId,
-} from '../../redux/advert/advertsSelectors';
-import { toggleModalWindow } from '../../redux/advert/advertsSlice';
-import { getAdvertByIdThunk } from '../../redux/advert/advertsOperations';
 import Modal from 'components/Modal/Modal';
 import Features from 'components/Features/Features';
 import Reviews from 'components/Reviews/Reviews';
 import BookForm from 'components/BookForm/BookForm';
 
-export default function CamperDetails() {
-  const [showComponentByName, setShowComponentByName] = useState('');
-  const dispatch = useDispatch();
-  const modalOpen = useSelector(selectOpenModal);
-  const advert = useSelector(selectModalContent);
-  const advertId = useSelector(selectModalId);
-
-  useEffect(() => {
-    dispatch(getAdvertByIdThunk(advertId));
-  }, [advertId, dispatch]);
-
+export default function CamperDetails({ advert, modalIsOpen, setModalIsOpen }) {
   const { name, price, rating, reviews, location, gallery, description } =
     advert;
+
+  const [showComponentByName, setShowComponentByName] = useState('');
 
   return (
     <>
       <Modal
-        isOpen={modalOpen}
+        isOpen={modalIsOpen}
         onClose={() => {
-          dispatch(toggleModalWindow(false));
+          setModalIsOpen(false);
         }}
       >
         <h2>{name}</h2>

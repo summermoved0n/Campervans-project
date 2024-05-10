@@ -13,7 +13,6 @@ import { Radio } from 'Icons/Radio';
 export default function Features({ advert }) {
   const { adults, details, form, length, width, height, tank, consumption } =
     advert;
-  console.log(advert);
 
   return (
     <div>
