@@ -1,0 +1,18 @@
+.filter_conteiner {
+  padding-left: 40px;
+}
+
+.checkbox_list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.checkbox_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112px;
+  height: 96px;
+}

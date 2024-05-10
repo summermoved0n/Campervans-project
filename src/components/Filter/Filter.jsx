@@ -1,38 +1,44 @@
 import React from 'react';
 
+import css from './Filter.module.css';
+
+import { AirConditioner } from 'Icons/AirConditioner';
+import { Automatic } from 'Icons/Automatic';
+import { Kitchen } from 'Icons/Kitchen';
+import { Shower } from 'Icons/Shower';
+import { Television } from 'Icons/Television';
+import CustomCheckbox from 'services/CustomCheckbox/CustomCheckbox';
+
 export default function Filter() {
   return (
     <>
-      <div>
+      <div className={css.filter_conteiner}>
         <p>Location</p>
         <input type="text" />
       </div>
-      <form>
+      <form className={css.filter_conteiner}>
         <p>Filters</p>
         <p>Vehicle equipment</p>
         <hr />
-        <label>
-          <input type="checkbox" />
-          AC
-        </label>
-        <label>
-          <input type="checkbox" />
-          Automatic
-        </label>
-        <label>
-          <input type="checkbox" />
-          Kitchen
-        </label>
-        <br />
-        <label>
-          <input type="checkbox" />
-          TV
-        </label>
-        <label>
-          <input type="checkbox" />
-          Shower/WC
-        </label>
-        <p>Vehicle type</p>
+        <ul className={css.checkbox_list}>
+          <li className={css.checkbox_item}>
+            <CustomCheckbox text={'AC'} component={<AirConditioner />} />
+          </li>
+          <li className={css.checkbox_item}>
+            <CustomCheckbox text={'Automatic'} component={<Automatic />} />
+          </li>
+          <li className={css.checkbox_item}>
+            <CustomCheckbox text={'Kitchen'} component={<Kitchen />} />
+          </li>
+          <li className={css.checkbox_item}>
+            <CustomCheckbox text={'TV'} component={<Television />} />
+          </li>
+          <li className={css.checkbox_item}>
+            <CustomCheckbox text={'Shower/WC'} component={<Shower />} />
+          </li>
+        </ul>
+
+        {/* <p>Vehicle type</p>
         <label>
           <input type="checkbox" />
           Van
@@ -44,9 +50,9 @@ export default function Filter() {
         <label>
           <input type="checkbox" />
           Alcove
-        </label>
+        </label> */}
+        <button>Search</button>
       </form>
-      <button>Search</button>
     </>
   );
 }
