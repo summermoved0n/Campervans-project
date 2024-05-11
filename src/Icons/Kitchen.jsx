@@ -1,12 +1,18 @@
 import React from 'react';
 
-export const Kitchen = () => {
+export const Kitchen = ({ size}) => {
   return (
-    <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 33 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M15.833 12.5v-10c-4.013 3.828-4.185 6.932-4.166 10h4.166Zm0 0v5H15V15M6.667 3.333V17.5m-2.5-14.167v2.5a2.5 2.5 0 1 0 5 0v-2.5"
+        d="M25.8334 20V4C19.4121 10.1253 19.1361 15.092 19.1667 20H25.8334ZM25.8334 20V28H24.5001V24M11.1667 5.33333V28M7.16675 5.33333V9.33333C7.16675 10.3942 7.58818 11.4116 8.33832 12.1618C9.08847 12.9119 10.1059 13.3333 11.1667 13.3333C12.2276 13.3333 13.245 12.9119 13.9952 12.1618C14.7453 11.4116 15.1667 10.3942 15.1667 9.33333V5.33333"
         stroke="#101828"
-        strokeWidth="1.5"
+        strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

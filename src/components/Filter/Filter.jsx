@@ -22,19 +22,31 @@ export default function Filter() {
         <hr />
         <ul className={css.checkbox_list}>
           <li className={css.checkbox_item}>
-            <CustomCheckbox text={'AC'} component={<AirConditioner />} />
+            <CustomCheckbox
+              text={'AC'}
+              component={<AirConditioner size={32} />}
+            />
           </li>
           <li className={css.checkbox_item}>
-            <CustomCheckbox text={'Automatic'} component={<Automatic />} />
+            <CustomCheckbox
+              text={'Automatic'}
+              component={<Automatic size={32} />}
+            />
           </li>
           <li className={css.checkbox_item}>
-            <CustomCheckbox text={'Kitchen'} component={<Kitchen />} />
+            <CustomCheckbox
+              text={'Kitchen'}
+              component={<Kitchen size={32} />}
+            />
           </li>
           <li className={css.checkbox_item}>
-            <CustomCheckbox text={'TV'} component={<Television />} />
+            <CustomCheckbox text={'TV'} component={<Television size={32} />} />
           </li>
           <li className={css.checkbox_item}>
-            <CustomCheckbox text={'Shower/WC'} component={<Shower />} />
+            <CustomCheckbox
+              text={'Shower/WC'}
+              component={<Shower size={32} />}
+            />
           </li>
         </ul>
 

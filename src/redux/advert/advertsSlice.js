@@ -21,6 +21,9 @@ const advertsSlice = createSlice({
     removeFromFavorites(state, { payload }) {
       state.favorites = state.favorites.filter(item => item._id !== payload);
     },
+    onLoadMoreClick(state, { payload }) {
+      state.adverts.perPage = state.adverts.perPage + payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -40,6 +43,7 @@ const advertsSlice = createSlice({
   },
 });
 
-export const { addToFavorites, removeFromFavorites } = advertsSlice.actions;
+export const { addToFavorites, removeFromFavorites, onLoadMoreClick } =
+  advertsSlice.actions;
 
 export const advertsReducer = advertsSlice.reducer;
