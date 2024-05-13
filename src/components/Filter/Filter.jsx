@@ -8,13 +8,22 @@ import { Kitchen } from 'Icons/Kitchen';
 import { Shower } from 'Icons/Shower';
 import { Television } from 'Icons/Television';
 import CustomCheckbox from 'services/CustomCheckbox/CustomCheckbox';
+import { useDispatch } from 'react-redux';
+import { setFilter } from '../../redux/advert/advertsSlice';
 
 export default function Filter() {
+  const dispatch = useDispatch();
+
+  const locationHandleChange = e => {
+    const { value } = e.target;
+    dispatch(setFilter(value));
+  };
+
   return (
     <>
       <div className={css.filter_conteiner}>
         <p>Location</p>
-        <input type="text" />
+        <input type="text" onChange={locationHandleChange} />
       </div>
       <form className={css.filter_conteiner}>
         <p>Filters</p>
