@@ -1,22 +1,31 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import css from './Filter.module.css';
-
+import CustomCheckbox from 'services/CustomCheckbox/CustomCheckbox';
+import {
+  getCheckboxFilteredArray,
+  setFilter,
+} from '../../redux/advert/advertsSlice';
+import { selectCheckboxFilter } from '../../redux/advert/advertsSelectors';
 import { AirConditioner } from 'Icons/AirConditioner';
 import { Automatic } from 'Icons/Automatic';
 import { Kitchen } from 'Icons/Kitchen';
 import { Shower } from 'Icons/Shower';
 import { Television } from 'Icons/Television';
-import CustomCheckbox from 'services/CustomCheckbox/CustomCheckbox';
-import { useDispatch } from 'react-redux';
-import { setFilter } from '../../redux/advert/advertsSlice';
 
 export default function Filter() {
   const dispatch = useDispatch();
+  const checkboxFilter = useSelector(selectCheckboxFilter);
 
   const locationHandleChange = e => {
     const { value } = e.target;
     dispatch(setFilter(value));
+  };
+
+  const onFormSubmit = e => {
+    e.preventDefault();
+    dispatch(getCheckboxFilteredArray(checkboxFilter));
   };
 
   return (
@@ -25,7 +34,7 @@ export default function Filter() {
         <p>Location</p>
         <input type="text" onChange={locationHandleChange} />
       </div>
-      <form className={css.filter_conteiner}>
+      <form className={css.filter_conteiner} onSubmit={onFormSubmit}>
         <p>Filters</p>
         <p>Vehicle equipment</p>
         <hr />
@@ -72,7 +81,7 @@ export default function Filter() {
           <input type="checkbox" />
           Alcove
         </label> */}
-        <button>Search</button>
+        <button type="submit">Search</button>
       </form>
     </>
   );

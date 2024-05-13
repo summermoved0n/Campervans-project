@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react';
 
 import css from './CamperList.module.css';
 import { getAdvertsThunk } from '../../redux/advert/advertsOperations';
-import { selectVisibleAdverts } from '../../redux/advert/advertsSelectors';
+import {
+  selectCheckboxFilter,
+  selectVisibleAdverts,
+} from '../../redux/advert/advertsSelectors';
 import Filter from 'components/Filter/Filter';
 import CamperListItems from 'components/CamperListItems/CamperListItems';
 
@@ -12,16 +15,25 @@ export default function CamperList() {
   const [perPage] = useState(4);
   const dispatch = useDispatch();
   const filteredAdverts = useSelector(selectVisibleAdverts);
+  const checkboxFilter = useSelector(selectCheckboxFilter);
 
   useEffect(() => {
     dispatch(getAdvertsThunk());
   }, [dispatch]);
 
-  const totalPages = Math.ceil(filteredAdverts.length / perPage);
-  const indexLastItem = currentPage * perPage;
-  const currentAdverts = filteredAdverts.slice(0, indexLastItem);
+  const filteredCampers = filteredAdverts.filter(camper => {
+    return (
+      (!checkboxFilter.airConditioner || camper.details.airConditioner) &&
+      (!checkboxFilter.transmission || camper.transmission) &&
+      (!checkboxFilter.kitchen || camper.details.kitchen) &&
+      (!checkboxFilter.TV || camper.details.TV) &&
+      (!checkboxFilter.shower || camper.details.shower)
+    );
+  });
 
-  console.log(currentAdverts);
+  const totalPages = Math.ceil(filteredCampers.length / perPage);
+  const indexLastItem = currentPage * perPage;
+  const currentAdverts = filteredCampers.slice(0, indexLastItem);
 
   return (
     <section className={css.catalog_section}>
