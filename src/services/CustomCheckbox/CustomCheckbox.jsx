@@ -8,8 +8,7 @@ export default function CustomCheckbox({ component, text, setCheckboxGroup }) {
   const onCheckboxChange = e => {
     const { checked, name } = e.target;
     setIsChecked(!isChecked);
-    const data = { [name]: checked };
-    setCheckboxGroup(prevState => ({ ...prevState, ...data }));
+    setCheckboxGroup(prevState => ({ ...prevState, [name]: checked }));
   };
 
   const getName = name => {

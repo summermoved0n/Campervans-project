@@ -3,11 +3,13 @@ import { useDispatch } from 'react-redux';
 
 import css from './Filter.module.css';
 import CustomCheckbox from 'services/CustomCheckbox/CustomCheckbox';
+import CustomRadioBtn from 'services/CustomRadioBtn/CustomRadioBtn';
+
 import {
   setFilter,
+  setRadioBtnFilter,
   toggleCheckboxFilter,
 } from '../../redux/advert/advertsSlice';
-// import { selectCheckboxFilter } from '../../redux/advert/advertsSelectors';
 import { AirConditioner } from 'Icons/AirConditioner';
 import { Automatic } from 'Icons/Automatic';
 import { Kitchen } from 'Icons/Kitchen';
@@ -22,6 +24,7 @@ export default function Filter() {
     TV: false,
     shower: false,
   });
+  const [selectedOption, setSelectedOption] = useState('');
   const dispatch = useDispatch();
 
   const locationHandleChange = e => {
@@ -32,8 +35,8 @@ export default function Filter() {
   const onFormSubmit = e => {
     e.preventDefault();
     dispatch(toggleCheckboxFilter(checkboxGroup));
+    dispatch(setRadioBtnFilter(selectedOption));
   };
-  console.log(checkboxGroup);
 
   return (
     <>
@@ -83,19 +86,36 @@ export default function Filter() {
           </li>
         </ul>
 
-        {/* <p>Vehicle type</p>
-        <label>
-          <input type="checkbox" />
-          Van
-        </label>
-        <label>
-          <input type="checkbox" />
-          Fully Integrated
-        </label>
-        <label>
-          <input type="checkbox" />
-          Alcove
-        </label> */}
+        <br />
+        <p>Vehicle type</p>
+        <hr />
+        <ul className={css.radiobtn_list}>
+          <li className={css.radiobtn_item}>
+            <CustomRadioBtn
+              text={'Van'}
+              component={<Automatic size={32} />}
+              selectedOption={selectedOption}
+              setSelectedOption={setSelectedOption}
+            />
+          </li>
+          <li className={css.radiobtn_item}>
+            <CustomRadioBtn
+              text={'Fully Integrated'}
+              component={<Automatic size={32} />}
+              selectedOption={selectedOption}
+              setSelectedOption={setSelectedOption}
+            />
+          </li>
+          <li className={css.radiobtn_item}>
+            <CustomRadioBtn
+              text={'Alcove'}
+              component={<Automatic size={32} />}
+              selectedOption={selectedOption}
+              setSelectedOption={setSelectedOption}
+            />
+          </li>
+        </ul>
+
         <button type="submit">Search</button>
       </form>
     </>

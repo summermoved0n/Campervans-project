@@ -5,6 +5,7 @@ import css from './CamperList.module.css';
 import { getAdvertsThunk } from '../../redux/advert/advertsOperations';
 import {
   selectCheckboxFilter,
+  selectRadioBtnFilter,
   selectVisibleAdverts,
 } from '../../redux/advert/advertsSelectors';
 import Filter from 'components/Filter/Filter';
@@ -16,6 +17,7 @@ export default function CamperList() {
   const dispatch = useDispatch();
   const filteredAdverts = useSelector(selectVisibleAdverts);
   const checkboxFilter = useSelector(selectCheckboxFilter);
+  const radioBtnFilter = useSelector(selectRadioBtnFilter);
 
   useEffect(() => {
     dispatch(getAdvertsThunk());
@@ -27,7 +29,8 @@ export default function CamperList() {
       (!checkboxFilter.transmission || camper.transmission) &&
       (!checkboxFilter.kitchen || camper.details.kitchen) &&
       (!checkboxFilter.TV || camper.details.TV) &&
-      (!checkboxFilter.shower || camper.details.shower)
+      (!checkboxFilter.shower || camper.details.shower) &&
+      (!radioBtnFilter || camper.form === radioBtnFilter)
     );
   });
 

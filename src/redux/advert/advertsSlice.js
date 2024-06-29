@@ -30,6 +30,9 @@ const advertsSlice = createSlice({
     toggleCheckboxFilter(state, { payload }) {
       state.checkboxFilter = { ...state.checkboxFilter, ...payload };
     },
+    setRadioBtnFilter(state, { payload }) {
+      state.radiobuttonFilter = payload;
+    },
   },
   extraReducers: builder =>
     builder
@@ -52,6 +55,7 @@ export const {
   removeFromFavorites,
   setFilter,
   toggleCheckboxFilter,
+  setRadioBtnFilter,
 } = advertsSlice.actions;
 
 export const advertsReducer = advertsSlice.reducer;

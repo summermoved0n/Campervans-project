@@ -16,3 +16,18 @@
   width: 112px;
   height: 96px;
 }
+
+.radiobtn_list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.radiobtn_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112px;
+  height: 96px;
+}
