@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import css from './CustomCheckbox.module.css';
-import { toggleCheckboxFilter } from '../../redux/advert/advertsSlice';
 
-export default function CustomCheckbox({ component, text }) {
-  const dispatch = useDispatch();
-
+export default function CustomCheckbox({ component, text, setCheckboxGroup }) {
   const [isChecked, setIsChecked] = useState(false);
 
   const onCheckboxChange = e => {
     const { checked, name } = e.target;
     setIsChecked(!isChecked);
-    dispatch(toggleCheckboxFilter({ [name]: checked }));
+    const data = { [name]: checked };
+    setCheckboxGroup(prevState => ({ ...prevState, ...data }));
   };
 
   const getName = name => {

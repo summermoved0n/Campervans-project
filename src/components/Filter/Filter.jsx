@@ -1,13 +1,13 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import css from './Filter.module.css';
 import CustomCheckbox from 'services/CustomCheckbox/CustomCheckbox';
 import {
-  getCheckboxFilteredArray,
   setFilter,
+  toggleCheckboxFilter,
 } from '../../redux/advert/advertsSlice';
-import { selectCheckboxFilter } from '../../redux/advert/advertsSelectors';
+// import { selectCheckboxFilter } from '../../redux/advert/advertsSelectors';
 import { AirConditioner } from 'Icons/AirConditioner';
 import { Automatic } from 'Icons/Automatic';
 import { Kitchen } from 'Icons/Kitchen';
@@ -15,8 +15,14 @@ import { Shower } from 'Icons/Shower';
 import { Television } from 'Icons/Television';
 
 export default function Filter() {
+  const [checkboxGroup, setCheckboxGroup] = useState({
+    airConditioner: false,
+    transmission: false,
+    kitchen: false,
+    TV: false,
+    shower: false,
+  });
   const dispatch = useDispatch();
-  const checkboxFilter = useSelector(selectCheckboxFilter);
 
   const locationHandleChange = e => {
     const { value } = e.target;
@@ -25,8 +31,9 @@ export default function Filter() {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    dispatch(getCheckboxFilteredArray(checkboxFilter));
+    dispatch(toggleCheckboxFilter(checkboxGroup));
   };
+  console.log(checkboxGroup);
 
   return (
     <>
@@ -43,27 +50,35 @@ export default function Filter() {
             <CustomCheckbox
               text={'AC'}
               component={<AirConditioner size={32} />}
+              setCheckboxGroup={setCheckboxGroup}
             />
           </li>
           <li className={css.checkbox_item}>
             <CustomCheckbox
               text={'Automatic'}
               component={<Automatic size={32} />}
+              setCheckboxGroup={setCheckboxGroup}
             />
           </li>
           <li className={css.checkbox_item}>
             <CustomCheckbox
               text={'Kitchen'}
               component={<Kitchen size={32} />}
+              setCheckboxGroup={setCheckboxGroup}
             />
           </li>
           <li className={css.checkbox_item}>
-            <CustomCheckbox text={'TV'} component={<Television size={32} />} />
+            <CustomCheckbox
+              text={'TV'}
+              component={<Television size={32} />}
+              setCheckboxGroup={setCheckboxGroup}
+            />
           </li>
           <li className={css.checkbox_item}>
             <CustomCheckbox
               text={'Shower/WC'}
               component={<Shower size={32} />}
+              setCheckboxGroup={setCheckboxGroup}
             />
           </li>
         </ul>

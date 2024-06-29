@@ -8,13 +8,7 @@ const initialState = {
     isLoading: false,
     error: null,
   },
-  checkboxFilter: {
-    airConditioner: false,
-    transmission: false,
-    kitchen: false,
-    TV: false,
-    shower: false,
-  },
+  checkboxFilter: {},
   radiobuttonFilter: '',
   filter: '',
   favorites: [],
@@ -36,16 +30,6 @@ const advertsSlice = createSlice({
     toggleCheckboxFilter(state, { payload }) {
       state.checkboxFilter = { ...state.checkboxFilter, ...payload };
     },
-    // getCheckboxFilteredArray(state, { payload }) {
-    //   console.log(payload);
-    //   state.adverts.catalog = state.adverts.catalog.filter(camper => {
-    //     return (
-    //       (!payload.airConditioner ||
-    //         (camper.details && camper.details.airConditioner)) &&
-    //       (!payload.transmission || (camper && camper.transmission))
-    //     );
-    //   });
-    // },
   },
   extraReducers: builder =>
     builder
@@ -68,7 +52,6 @@ export const {
   removeFromFavorites,
   setFilter,
   toggleCheckboxFilter,
-  getCheckboxFilteredArray,
 } = advertsSlice.actions;
 
 export const advertsReducer = advertsSlice.reducer;
