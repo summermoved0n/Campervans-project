@@ -16,6 +16,9 @@ import { Kitchen } from 'Icons/Kitchen';
 import { Shower } from 'Icons/Shower';
 import { Television } from 'Icons/Television';
 import { Location } from 'Icons/Location';
+import { Van } from 'Icons/Van';
+import { FullyIntegrated } from 'Icons/FullyIntegrated';
+import { Alcove } from 'Icons/Alcove';
 
 export default function Filter() {
   const [checkboxGroup, setCheckboxGroup] = useState({
@@ -45,7 +48,7 @@ export default function Filter() {
         <p className={css.location_text}>Location</p>
         <div className={css.location_conteiner}>
           <div className={css.lication_icon_wrap}>
-            <Location />
+            <Location size={20} />
           </div>
           <input
             className={css.location_field}
@@ -100,7 +103,7 @@ export default function Filter() {
           <li className={css.radiobtn_item}>
             <CustomRadioBtn
               text={'Van'}
-              component={<Automatic size={32} />}
+              component={<Van size={32} />}
               selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
             />
@@ -108,7 +111,7 @@ export default function Filter() {
           <li className={css.radiobtn_item}>
             <CustomRadioBtn
               text={'Fully Integrated'}
-              component={<Automatic size={32} />}
+              component={<FullyIntegrated size={32} />}
               selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
             />
@@ -116,7 +119,7 @@ export default function Filter() {
           <li className={css.radiobtn_item}>
             <CustomRadioBtn
               text={'Alcove'}
-              component={<Automatic size={32} />}
+              component={<Alcove size={32} />}
               selectedOption={selectedOption}
               setSelectedOption={setSelectedOption}
             />

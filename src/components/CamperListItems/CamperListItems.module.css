@@ -1,6 +1,15 @@
 .camper_catalog {
   display: flex;
+  flex-direction: column;
   gap: 20px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 20px;
+  padding: 14px;
+}
+
+img {
+  border-radius: 10px;
+  margin: 0 auto;
 }
 
 .title_conteiner {
@@ -8,9 +17,57 @@
   justify-content: space-between;
 }
 
+.item_title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.price_text {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
 .price_conteiner {
   display: flex;
   gap: 5px;
+  margin-bottom: 10px;
+}
+
+.add_favorite_btn {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.location_conteiner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating_text {
+  margin: 0 20px 0 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--main);
+}
+
+.location_text {
+  margin-left: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.description_conteiner {
+  margin-bottom: 10px;
 }
 
 .description_text {
@@ -18,4 +75,45 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.item_list_details {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.item_details {
+  display: flex;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background-color: #f2f4f7;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--main);
+}
+
+.show_more_btn {
+  border: none;
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background-color: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.show_more_btn:hover {
+  transition: all 250ms ease;
+  background-color: #d84343;
 }

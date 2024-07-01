@@ -46,7 +46,7 @@ export default function CamperList() {
 
       <div className={css.catalog_block}>
         {currentAdverts.length > 0 ? (
-          <ul>
+          <ul className={css.catalog_list}>
             {currentAdverts.map(advert => (
               <CamperListItems
                 key={advert._id}
@@ -60,9 +60,9 @@ export default function CamperList() {
             Can't find any campervan in this location <span>🤷‍♂️</span>
           </p>
         )}
-        <br />
         {currentPage < totalPages && (
           <button
+            className={css.load_more_btn}
             type="button"
             onClick={() => {
               setCurrentPage(prev => prev + 1);

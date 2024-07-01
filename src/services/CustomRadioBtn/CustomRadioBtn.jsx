@@ -36,7 +36,7 @@ export default function CustomRadioBtn({
       />
       <span className={css.radio_label}>
         {component}
-        {text}
+        <p className={css.radio_text}>{text}</p>
       </span>
     </label>
   );

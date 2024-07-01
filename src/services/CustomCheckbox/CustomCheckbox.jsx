@@ -40,7 +40,7 @@ export default function CustomCheckbox({ component, text, setCheckboxGroup }) {
       />
       <span className={css.checkbox_label}>
         {component}
-        {text}
+        <p className={css.checkbox_text}>{text}</p>
       </span>
     </label>
   );
