@@ -1,4 +1,12 @@
+.conteiner {
+  max-width: 375px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+
 .header {
+  background-color: tan;
   padding: 10px 10px;
   display: flex;
   justify-content: space-between;

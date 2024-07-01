@@ -15,6 +15,7 @@ import { Automatic } from 'Icons/Automatic';
 import { Kitchen } from 'Icons/Kitchen';
 import { Shower } from 'Icons/Shower';
 import { Television } from 'Icons/Television';
+import { Location } from 'Icons/Location';
 
 export default function Filter() {
   const [checkboxGroup, setCheckboxGroup] = useState({
@@ -41,13 +42,22 @@ export default function Filter() {
   return (
     <>
       <div className={css.filter_conteiner}>
-        <p>Location</p>
-        <input type="text" onChange={locationHandleChange} />
+        <p className={css.location_text}>Location</p>
+        <div className={css.location_conteiner}>
+          <div className={css.lication_icon_wrap}>
+            <Location />
+          </div>
+          <input
+            className={css.location_field}
+            type="text"
+            onChange={locationHandleChange}
+            placeholder="City"
+          />
+        </div>
       </div>
       <form className={css.filter_conteiner} onSubmit={onFormSubmit}>
-        <p>Filters</p>
-        <p>Vehicle equipment</p>
-        <hr />
+        <p className={css.filter_text}>Filters</p>
+        <p className={css.vehicle_text}>Vehicle equipment</p>
         <ul className={css.checkbox_list}>
           <li className={css.checkbox_item}>
             <CustomCheckbox
@@ -85,10 +95,7 @@ export default function Filter() {
             />
           </li>
         </ul>
-
-        <br />
-        <p>Vehicle type</p>
-        <hr />
+        <p className={css.vehicle_text}>Vehicle type</p>
         <ul className={css.radiobtn_list}>
           <li className={css.radiobtn_item}>
             <CustomRadioBtn
@@ -116,7 +123,9 @@ export default function Filter() {
           </li>
         </ul>
 
-        <button type="submit">Search</button>
+        <button className={css.filter_btn} type="submit">
+          Search
+        </button>
       </form>
     </>
   );

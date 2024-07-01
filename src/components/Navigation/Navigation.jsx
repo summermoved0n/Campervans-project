@@ -7,15 +7,19 @@ export default function Navigation() {
   return (
     <>
       <header className={css.header}>
-        <NavLink to="/">Home</NavLink>
+        <div>
+          <NavLink to="/">Home</NavLink>
+        </div>
         <div>
           <NavLink to="/catalog">Catalog</NavLink>
           <NavLink to="/favorites">Favorites</NavLink>
         </div>
       </header>
-      <main>
-        <Outlet />
-      </main>
+      <div className={css.conteiner}>
+        <main>
+          <Outlet />
+        </main>
+      </div>
     </>
   );
 }

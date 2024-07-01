@@ -1,4 +1,11 @@
-@import-normalize; /* bring in normalize.css styles */
+:root {
+  --inputs: #f7f7f7;
+  --block-features: #f2f4f7;
+  --rating: #ffc531;
+  --button: #e44848;
+  --text: #475467;
+  --main: #101828;
+}
 
 body {
   margin: 0;

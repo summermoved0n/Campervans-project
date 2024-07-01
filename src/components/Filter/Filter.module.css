@@ -1,12 +1,64 @@
 .filter_conteiner {
-  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.location_text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(16, 24, 40, 0.6);
+  margin-bottom: 8px;
+}
+
+.location_conteiner {
+  position: relative;
+}
+
+.lication_icon_wrap {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.location_field {
+  border-radius: 10px;
+  border: none;
+  outline: transparent;
+  padding: 12px 12px 12px 34px;
+  width: 200px;
+  background-color: var(--inputs);
+
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.filter_text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.vehicle_text {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 24px;
 }
 
 .checkbox_list {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  width: 360px;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  padding-top: 24px;
+  margin-bottom: 24px;
 }
 
 .checkbox_item {
@@ -21,7 +73,9 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  width: 360px;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  padding-top: 24px;
+  margin-bottom: 44px;
 }
 
 .radiobtn_item {
@@ -30,4 +84,25 @@
   align-items: center;
   width: 112px;
   height: 96px;
+}
+
+.filter_btn {
+  cursor: pointer;
+  margin: 0 auto;
+  border: none;
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 173px;
+  height: 56px;
+  background-color: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 44px;
+}
+
+.filter_btn:hover {
+  transition: all 250ms ease;
+  background-color: #d84343;
 }
