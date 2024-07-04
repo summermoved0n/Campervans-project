@@ -29,15 +29,15 @@
   max-width: 1000px;
   border-radius: 20px;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 40px 20px 20px 20px;
   transform: translateY(-50px);
   transition: opacity 0.3s, transform 0.3s;
 }
 
 .close_btn {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 20px;
   padding: 0;
   border-style: none;
   background-color: transparent;

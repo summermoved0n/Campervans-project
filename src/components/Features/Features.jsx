@@ -14,76 +14,105 @@ export default function Features({ advert }) {
   const { adults, details, form, length, width, height, tank, consumption } =
     advert;
 
+  const getSeparateValue = value => {
+    const formattedLength = value.replace(/(\d*\.?\d+)([a-zA-Z]+)/, '$1 $2');
+    return formattedLength;
+  };
+
+  const setUpperCaseLetter = word => {
+    switch (word) {
+      case 'alcove':
+        return 'Alcove';
+      case 'fullyIntegrated':
+        return 'Fully integrated';
+      case 'panelTruck':
+        return 'Panel truck';
+      default:
+        return;
+    }
+  };
+
   return (
-    <div>
-      <ul>
-        <li>
-          <Adults />
-          <span>{adults} adults</span>
+    <div className={css.features_conteiner}>
+      <ul className={css.features_list}>
+        <li className={css.features_item}>
+          <Adults size={20} />
+          <span className={css.features_item_text}>{adults} adults</span>
         </li>
-        <li>
-          <Automatic />
-          <span>Automatic</span>
+        <li className={css.features_item}>
+          <Automatic size={20} />
+          <span className={css.features_item_text}>Automatic</span>
         </li>
-        <li>
-          <AirConditioner />
-          <span>AC</span>
+        <li className={css.features_item}>
+          <AirConditioner size={20} />
+          <span className={css.features_item_text}>AC</span>
         </li>
-        <li>
+        <li className={css.features_item}>
           <Petrol />
-          <span>Petrol</span>
+          <span className={css.features_item_text}>Petrol</span>
         </li>
-        <li>
-          <Kitchen />
-          <span>kitchen</span>
+        <li className={css.features_item}>
+          <Kitchen size={20} />
+          <span className={css.features_item_text}>kitchen</span>
         </li>
-        <li>
+        <li className={css.features_item}>
           <Bed />
-          <span>{details.bads} beds</span>
+          <span className={css.features_item_text}>{details.bads} beds</span>
         </li>
-        <li>
+        <li className={css.features_item}>
           <Conditioner />
-          <span>{details.airConditioner} air conditioner</span>
+          <span className={css.features_item_text}>
+            {details.airConditioner} air conditioner
+          </span>
         </li>
-        <li>
+        <li className={css.features_item}>
           <CompactDisk />
-          <span>CD</span>
+          <span className={css.features_item_text}>CD</span>
         </li>
-        <li>
+        <li className={css.features_item}>
           <Radio />
-          <span>Radio</span>
+          <span className={css.features_item_text}>Radio</span>
         </li>
-        <li>
+        <li className={css.features_item}>
           <Cooker />
-          <span>{details.hob} hob</span>
+          <span className={css.features_item_text}>{details.hob} hob</span>
         </li>
       </ul>
-      <p>Vehicle details</p>
-      <hr />
-      <ul>
-        <li className={css.item_details}>
-          <span>Form</span>
-          <span>{form}</span>
+      <h3 className={css.features_details_title}>Vehicle details</h3>
+      <ul className={css.features_details_list}>
+        <li className={css.features_details_item}>
+          <span className={css.features_details_text}>Form</span>
+          <span className={css.features_details_text}>
+            {setUpperCaseLetter(form)}
+          </span>
         </li>
-        <li className={css.item_details}>
-          <span>Length</span>
-          <span>{length}</span>
+        <li className={css.features_details_item}>
+          <span className={css.features_details_text}>Length</span>
+          <span className={css.features_details_text}>
+            {getSeparateValue(length)}
+          </span>
         </li>
-        <li className={css.item_details}>
-          <span>Width</span>
-          <span>{width}</span>
+        <li className={css.features_details_item}>
+          <span className={css.features_details_text}>Width</span>
+          <span className={css.features_details_text}>
+            {getSeparateValue(width)}
+          </span>
         </li>
-        <li className={css.item_details}>
-          <span>Heigth</span>
-          <span>{height}</span>
+        <li className={css.features_details_item}>
+          <span className={css.features_details_text}>Heigth</span>
+          <span className={css.features_details_text}>
+            {getSeparateValue(height)}
+          </span>
         </li>
-        <li className={css.item_details}>
-          <span>Tank</span>
-          <span>{tank}</span>
+        <li className={css.features_details_item}>
+          <span className={css.features_details_text}>Tank</span>
+          <span className={css.features_details_text}>
+            {getSeparateValue(tank)}
+          </span>
         </li>
-        <li className={css.item_details}>
-          <span>Consumption</span>
-          <span>{consumption}</span>
+        <li className={css.features_details_item}>
+          <span className={css.features_details_text}>Consumption</span>
+          <span className={css.features_details_text}>{consumption}</span>
         </li>
       </ul>
     </div>

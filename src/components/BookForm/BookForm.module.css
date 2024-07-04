@@ -1,0 +1,78 @@
+.book_conteiner {
+  margin-top: 40px;
+  padding: 14px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+}
+
+.book_title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+
+.book_text {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.book_input {
+  outline: none;
+  padding: 14px;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--inputs);
+  margin-bottom: 14px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.book_input_comment {
+  font-family: 'Inter', sans-serif;
+  resize: none;
+  outline: none;
+  padding: 14px;
+  width: 200px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--inputs);
+
+  font-size: 16px;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
+.book_input .book_input_comment::placeholder {
+  text-align: start;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.book_send_button {
+  cursor: pointer;
+  display: block;
+  border: none;
+  border-radius: 200px;
+  width: 160px;
+  height: 56px;
+  background-color: var(--button);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.book_send_button:hover {
+  transition: background-color 250ms ease;
+  background-color: #d84343;
+}
