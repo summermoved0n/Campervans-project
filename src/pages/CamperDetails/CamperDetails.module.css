@@ -2,3 +2,65 @@
   display: flex;
   justify-content: space-between;
 }
+
+.modal_title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+
+.modal_price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
+.modal_photos_list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.modal_description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 44px;
+}
+
+.modal_btns_conteiner {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+}
+
+.modal_down_btns {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  position: relative;
+}
+
+.modal_down_btns.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: var(--button);
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  transform: translateY(50%);
+}

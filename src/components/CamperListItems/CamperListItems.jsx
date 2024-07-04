@@ -21,6 +21,7 @@ import { Petrol } from 'Icons/Petrol';
 import { Kitchen } from 'Icons/Kitchen';
 import { Bed } from 'Icons/Bed';
 import { AirConditioner } from 'Icons/AirConditioner';
+import LocationAndRating from 'components/LocationAndRating/LocationAndRating';
 
 export default function CamperListItems({ id, advert }) {
   const {
@@ -82,14 +83,11 @@ export default function CamperListItems({ id, advert }) {
               )}
             </div>
           </div>
-          <div className={css.location_conteiner}>
-            <FaStar size={16} color="#FFC531" />
-            <p className={css.rating_text}>
-              {rating}({reviews.length} Reviews)
-            </p>
-            <Location size={16} />
-            <p className={css.location_text}>{location}</p>
-          </div>
+          <LocationAndRating
+            rating={rating}
+            reviews={reviews}
+            location={location}
+          />
           <div className={css.description_conteiner}>
             <p className={css.description_text}>{description}</p>
           </div>

@@ -42,7 +42,7 @@ export default function Modal({ isOpen, onClose, children }) {
                     onClose();
                   }}
                 >
-                  <IoIosClose size={16} />
+                  <IoIosClose size={24} />
                 </button>
                 {children}
               </div>
