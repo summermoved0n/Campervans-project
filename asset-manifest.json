@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Campervans-project/static/css/main.fbe97a9f.css",
-    "main.js": "/Campervans-project/static/js/main.61b08ab5.js",
+    "main.css": "/Campervans-project/static/css/main.fe769126.css",
+    "main.js": "/Campervans-project/static/js/main.c3e87772.js",
     "index.html": "/Campervans-project/index.html",
-    "main.fbe97a9f.css.map": "/Campervans-project/static/css/main.fbe97a9f.css.map",
-    "main.61b08ab5.js.map": "/Campervans-project/static/js/main.61b08ab5.js.map"
+    "main.fe769126.css.map": "/Campervans-project/static/css/main.fe769126.css.map",
+    "main.c3e87772.js.map": "/Campervans-project/static/js/main.c3e87772.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbe97a9f.css",
-    "static/js/main.61b08ab5.js"
+    "static/css/main.fe769126.css",
+    "static/js/main.c3e87772.js"
   ]
 }
