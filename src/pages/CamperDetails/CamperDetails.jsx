@@ -66,13 +66,13 @@ export default function CamperDetails({ advert, modalIsOpen, setModalIsOpen }) {
         {showComponentByName === 'features' && (
           <div className={css.show_component_conteiner}>
             <Features advert={advert} />
-            <BookForm />
+            <BookForm setModalIsOpen={setModalIsOpen} />
           </div>
         )}
         {showComponentByName === 'reviews' && (
           <div className={css.show_component_conteiner}>
             <Reviews reviews={reviews} />
-            <BookForm />
+            <BookForm setModalIsOpen={setModalIsOpen} />
           </div>
         )}
       </Modal>
