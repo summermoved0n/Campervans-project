@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa6';
-import { FaStar } from 'react-icons/fa';
 
 import css from './CamperListItems.module.css';
 import {
@@ -14,7 +13,6 @@ import {
   removeFromFavorites,
 } from '../../redux/advert/advertsSlice';
 import CamperDetails from 'pages/CamperDetails/CamperDetails';
-import { Location } from 'Icons/Location';
 import { Adults } from 'Icons/Adults';
 import { Automatic } from 'Icons/Automatic';
 import { Petrol } from 'Icons/Petrol';
