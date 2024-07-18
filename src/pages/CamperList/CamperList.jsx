@@ -56,7 +56,7 @@ export default function CamperList() {
             ))}
           </ul>
         ) : (
-          <p>
+          <p className={css.cstalog_nocontent_msg}>
             Can't find any campervan in this location <span>🤷‍♂️</span>
           </p>
         )}

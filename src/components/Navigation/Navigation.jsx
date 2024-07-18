@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { StyledLink } from 'services/styles/styledComponents';
 
 import css from './Navigation.module.css';
 
@@ -8,11 +9,11 @@ export default function Navigation() {
     <>
       <header className={css.header}>
         <div>
-          <NavLink to="/">Home</NavLink>
+          <StyledLink to="/">Home</StyledLink>
         </div>
-        <div>
-          <NavLink to="/catalog">Catalog</NavLink>
-          <NavLink to="/favorites">Favorites</NavLink>
+        <div className={css.header_right_wraper}>
+          <StyledLink to="/catalog">Catalog</StyledLink>
+          <StyledLink to="/favorites">Favorites</StyledLink>
         </div>
       </header>
       <div className={css.conteiner}>

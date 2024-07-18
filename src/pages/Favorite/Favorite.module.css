@@ -1,0 +1,17 @@
+.favorite_conteiner {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.favorite_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.favorite_no_content_msg {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
