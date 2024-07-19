@@ -4,18 +4,3 @@
   padding-right: 10px;
   margin: 0 auto;
 }
-
-.header {
-  margin: 0 auto;
-  width: 400px;
-  padding: 20px 10px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--text);
-}
-
-.header_right_wraper {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}

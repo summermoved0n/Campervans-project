@@ -1,0 +1,25 @@
+.footer {
+  background-color: var(--text);
+}
+
+.footer_conteiner {
+  margin: 0 auto;
+  width: 400px;
+  padding: 60px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer_back_link {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--inputs);
+}

@@ -1,5 +1,29 @@
-import React from 'react';
+import bigCampervan from '../../images/big_camparvan.jpg';
+import midCampervan from '../../images/mideum_campervan.jpg';
+import smallCampervan from '../../images/small_campervan.jpg';
+// import track from '../../images/track.jpg';
+
+import css from './Home.module.css';
+import HowItWorks from 'components/HowItWorks/HowItWorks';
+import WhyChooseUs from 'components/WhyChooseUs/WhyChooseUs';
+import { TextLink } from 'services/styles/styledComponents';
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div className={css.home_conteiner}>
+      <h1 className={css.main_title}>Discover the World with Our Campervans</h1>
+      <img src={bigCampervan} alt="campervan in desert" width={300} />
+      <WhyChooseUs />
+      <img src={midCampervan} alt="campervan in desert" width={300} />
+      <HowItWorks />
+      <img src={smallCampervan} alt="campervan in desert" width={300} />
+      <h2 className={css.main_subtitle}>Ready to Embark on an Adventure?</h2>
+      <p className={css.home_text}>
+        Plan your next trip with us! Visit our{' '}
+        <TextLink to="/catalog">Catalog</TextLink> section to view available
+        campervans, or contact us for more information. We look forward to being
+        a part of your unforgettable journeys!
+      </p>
+    </div>
+  );
 }

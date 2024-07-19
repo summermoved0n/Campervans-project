@@ -1,0 +1,35 @@
+.home_conteiner {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--main);
+}
+
+img {
+  margin: 20px 0;
+}
+
+.main_subtitle {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 20px;
+}
+
+.home_text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
