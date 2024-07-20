@@ -18,7 +18,7 @@ export default function Footer() {
               </p>
             </li>
             <li>
-              <FooterLink to="/favorite">Your favorite</FooterLink>
+              <FooterLink to="/favorites">Your favorite</FooterLink>
             </li>
           </ul>
           <a className={css.footer_back_link} href="#header">

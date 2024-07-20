@@ -36,3 +36,12 @@
   transition: border 250ms ease;
   border: 1px solid var(--button);
 }
+
+@media screen and (min-width: 768px) {
+  .catalog_list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
