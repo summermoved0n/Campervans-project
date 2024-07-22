@@ -102,3 +102,10 @@
     width: 310px;
   }
 }
+
+@media screen and (min-width: 1342px) {
+  .camper_catalog {
+    width: 800px;
+    flex-direction: row;
+  }
+}

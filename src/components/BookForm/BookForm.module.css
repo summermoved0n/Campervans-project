@@ -113,3 +113,25 @@
   transition: background-color 250ms ease;
   background-color: #d84343;
 }
+
+@media screen and (min-width: 1342px) {
+  .book_conteiner {
+    width: 100%;
+  }
+
+  .book_input {
+    width: 400px;
+  }
+
+  .book_data_conteiner {
+    width: 428px;
+  }
+
+  .book_input_date {
+    width: 428px;
+  }
+
+  .book_input_comment {
+    width: 400px;
+  }
+}

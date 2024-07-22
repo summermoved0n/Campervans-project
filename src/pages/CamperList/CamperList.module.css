@@ -45,3 +45,19 @@
     flex-wrap: wrap;
   }
 }
+
+@media screen and (min-width: 1342px) {
+  .catalog_section {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .filter_block {
+    width: 360px;
+  }
+
+  .catalog_list {
+    flex-direction: column;
+  }
+}

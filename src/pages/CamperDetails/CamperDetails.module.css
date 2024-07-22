@@ -73,3 +73,9 @@
     justify-content: space-between;
   }
 }
+
+@media screen and (min-width: 1342px) {
+  .show_component_conteiner {
+    gap: 24px;
+  }
+}

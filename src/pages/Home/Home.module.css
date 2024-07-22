@@ -64,3 +64,13 @@ img {
     width: 300px;
   }
 }
+
+@media screen and (min-width: 1342px) {
+  .main_title {
+    font-size: 28px;
+  }
+
+  .home_content_wraper {
+    width: 700px;
+  }
+}

@@ -106,3 +106,9 @@
   transition: all 250ms ease;
   background-color: #d84343;
 }
+
+@media screen and (min-width: 1342px) {
+  .filter_btn {
+    margin: 0;
+  }
+}

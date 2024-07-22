@@ -11,6 +11,13 @@ export const StyledLink = styled(NavLink)`
     color: #e44848;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
+
+  @media screen and (min-width: 1342px) {
+    font-size: 26px;
+    &.active {
+      font-size: 28px;
+    }
+  }
 `;
 
 export const TextLink = styled(Link)`
@@ -25,6 +32,4 @@ export const FooterLink = styled(Link)`
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  &.hover {
-  }
 `;

@@ -24,8 +24,19 @@
   color: var(--inputs);
 }
 
+.footer_link:hover {
+  transition: color 250ms ease;
+  color: var(--button);
+}
+
 @media screen and (min-width: 768px) {
   .footer_conteiner {
     width: 650px;
+  }
+}
+
+@media screen and (min-width: 1342px) {
+  .footer_conteiner {
+    width: 1200px;
   }
 }

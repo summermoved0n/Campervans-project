@@ -10,3 +10,11 @@
     max-width: 768px;
   }
 }
+
+@media screen and (min-width: 1342px) {
+  .conteiner {
+    max-width: 1342px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+}

@@ -10,18 +10,27 @@ export default function Footer() {
         <div className={css.footer_conteiner}>
           <ul className={css.footer_list}>
             <li>
-              <FooterLink to="/">Home</FooterLink>
+              <FooterLink className={css.footer_link} to="/">
+                Home
+              </FooterLink>
             </li>
             <li>
               <p>
-                <FooterLink to="/catalog">Book Now</FooterLink>
+                <FooterLink className={css.footer_link} to="/catalog">
+                  Book Now
+                </FooterLink>
               </p>
             </li>
             <li>
-              <FooterLink to="/favorites">Your favorite</FooterLink>
+              <FooterLink className={css.footer_link} to="/favorites">
+                Your favorite
+              </FooterLink>
             </li>
           </ul>
-          <a className={css.footer_back_link} href="#header">
+          <a
+            className={`${css.footer_back_link} ${css.footer_link}`}
+            href="#header"
+          >
             Back to top
           </a>
         </div>
