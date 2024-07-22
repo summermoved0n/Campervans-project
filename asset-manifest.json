@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Campervans-project/static/css/main.49e34c3a.css",
-    "main.js": "/Campervans-project/static/js/main.2e665257.js",
+    "main.css": "/Campervans-project/static/css/main.cc7377f0.css",
+    "main.js": "/Campervans-project/static/js/main.b2efe704.js",
     "static/media/mideum_campervan.jpg": "/Campervans-project/static/media/mideum_campervan.163fcacd4907b17c8ad8.jpg",
     "static/media/big_camparvan.jpg": "/Campervans-project/static/media/big_camparvan.a0f670f23c5ff79553b2.jpg",
     "static/media/small_campervan.jpg": "/Campervans-project/static/media/small_campervan.d0e342bf07387eec9bf4.jpg",
     "index.html": "/Campervans-project/index.html",
-    "main.49e34c3a.css.map": "/Campervans-project/static/css/main.49e34c3a.css.map",
-    "main.2e665257.js.map": "/Campervans-project/static/js/main.2e665257.js.map"
+    "main.cc7377f0.css.map": "/Campervans-project/static/css/main.cc7377f0.css.map",
+    "main.b2efe704.js.map": "/Campervans-project/static/js/main.b2efe704.js.map"
   },
   "entrypoints": [
-    "static/css/main.49e34c3a.css",
-    "static/js/main.2e665257.js"
+    "static/css/main.cc7377f0.css",
+    "static/js/main.b2efe704.js"
   ]
 }
