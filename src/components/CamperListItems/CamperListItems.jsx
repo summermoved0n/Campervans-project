@@ -56,12 +56,9 @@ export default function CamperListItems({ id, advert }) {
   return (
     <>
       <li key={id} id={id} className={css.camper_catalog}>
-        <img
-          className={css.camper_catalog_img}
-          src={gallery[0]}
-          alt={name}
-          width={310}
-        />
+        <div className={css.catalog_img_conteiner}>
+          <img className={css.camper_catalog_img} src={gallery[0]} alt={name} />
+        </div>
         <div>
           <div className={css.title_conteiner}>
             <h2 className={css.item_title}>{name}</h2>

@@ -7,7 +7,7 @@ import Footer from 'components/Footer/Footer';
 
 export default function Navigation() {
   return (
-    <>
+    <div className={css.wrapper}>
       <Header />
       <div className={css.conteiner}>
         <main>
@@ -15,6 +15,6 @@ export default function Navigation() {
         </main>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -10,6 +10,15 @@
 .camper_catalog_img {
   margin: 0 auto;
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.catalog_img_conteiner {
+  height: 310px;
+  overflow: hidden;
 }
 
 .title_conteiner {
