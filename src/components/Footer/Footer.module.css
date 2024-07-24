@@ -4,7 +4,7 @@
 
 .footer_conteiner {
   margin: 0 auto;
-  width: 400px;
+  max-width: 400px;
   padding: 60px 10px;
   display: flex;
   justify-content: space-between;
@@ -17,6 +17,11 @@
 }
 
 .footer_back_link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   font-weight: 400;
   font-size: 16px;
@@ -31,12 +36,12 @@
 
 @media screen and (min-width: 768px) {
   .footer_conteiner {
-    width: 650px;
+    max-width: 650px;
   }
 }
 
 @media screen and (min-width: 1342px) {
   .footer_conteiner {
-    width: 1200px;
+    max-width: 1200px;
   }
 }

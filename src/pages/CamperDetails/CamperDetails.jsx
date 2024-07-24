@@ -36,8 +36,13 @@ export default function CamperDetails({ advert, modalIsOpen, setModalIsOpen }) {
         <p className={css.modal_price}>€{price}.00</p>
         <ul className={css.modal_photos_list}>
           {gallery.map(item => (
-            <li key={item}>
-              <img src={item} alt={name} width={290} />
+            <li key={item} className={css.modal_photos_item}>
+              <img
+                className={css.modal_item_image}
+                src={item}
+                alt={name}
+                width={290}
+              />
             </li>
           ))}
         </ul>

@@ -4,7 +4,7 @@
 
 .header_conteiner {
   margin: 0 auto;
-  width: 400px;
+  max-width: 400px;
   padding: 20px 10px;
   display: flex;
   justify-content: space-between;
@@ -13,18 +13,22 @@
 .header_right_wraper {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
 }
 
 @media screen and (min-width: 768px) {
   .header_conteiner {
-    width: 600px;
+    max-width: 600px;
     padding: 30px 10px;
+  }
+
+  .header_right_wraper {
+    gap: 30px;
   }
 }
 
 @media screen and (min-width: 1342px) {
   .header_conteiner {
-    width: 1200px;
+    max-width: 1200px;
   }
 }

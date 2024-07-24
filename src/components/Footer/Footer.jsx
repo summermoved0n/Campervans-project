@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { FaArrowUp } from 'react-icons/fa';
+
 import css from './Footer.module.css';
 import { FooterLink } from 'services/styles/styledComponents';
 
@@ -31,7 +33,8 @@ export default function Footer() {
             className={`${css.footer_back_link} ${css.footer_link}`}
             href="#header"
           >
-            Back to top
+            <FaArrowUp size={20} />
+            <p>Back to top</p>
           </a>
         </div>
       </footer>
