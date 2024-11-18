@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-
-import { Calendar } from 'primereact/calendar';
+import Notiflix from 'notiflix';
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/themes/material_red.css';
 
 import css from './BookForm.module.css';
-import '../../services/styles/calendar.css';
-import { CalendarIcon } from 'Icons/Calendar';
+// import { CalendarIcon } from 'Icons/Calendar';
 
 export default function BookForm({ setModalIsOpen }) {
   const [inputName, setInputName] = useState('');
@@ -41,9 +41,23 @@ export default function BookForm({ setModalIsOpen }) {
       date,
       comment: inputComment,
     };
-    console.log(data);
+    // console.log(data);
+    const isValidated = validationForm(data);
+
+    if (!isValidated) {
+      return Notiflix.Notify.failure('All fields should be fill in😴');
+    }
+
     formCleaner();
     setModalIsOpen(false);
+    Notiflix.Notify.success(
+      'Sent successful! Our manager will connect with you soon🥰'
+    );
+  };
+
+  const validationForm = data => {
+    const dataValues = Object.values(data);
+    return dataValues.every(item => item !== '');
   };
 
   const formCleaner = () => {
@@ -76,20 +90,30 @@ export default function BookForm({ setModalIsOpen }) {
           placeholder="Email"
           onChange={onInputChange}
         />
-        <div className={css.book_data_conteiner}>
-          <Calendar
-            panelClassName={css.book_calendar}
-            inputClassName={css.book_input_date}
-            todayButtonClassName={css.book_calendar_today}
-            value={date}
-            name="calendar"
-            placeholder="Booking date"
-            onChange={onInputChange}
-          />
-          <button className={css.book_calendar_btn} type="button">
-            <CalendarIcon />
-          </button>
-        </div>
+        <Flatpickr
+          options={{
+            enableTime: false,
+            time_24hr: true,
+            defaultDate: new Date(),
+            minuteIncrement: 1,
+          }}
+          className={css.book_calendar}
+          placeholder="Booking date"
+          value={date}
+          onChange={([date]) => {
+            const currentDate = new Date();
+            if (date < currentDate) {
+              setDate('');
+              return Notiflix.Notify.failure(
+                'Please choose a date in the future'
+              );
+            }
+            const dateValue = `${date.getDate()}-${
+              date.getMonth() + 1
+            }-${date.getFullYear()}`;
+            setDate(dateValue);
+          }}
+        />
 
         <textarea
           className={css.book_input_comment}

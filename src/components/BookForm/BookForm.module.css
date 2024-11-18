@@ -34,6 +34,22 @@
   color: var(--main);
 }
 
+.book_calendar {
+  display: block;
+  cursor: pointer;
+  outline: none;
+  padding: 14px;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--inputs);
+  margin-bottom: 14px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
 .book_input_comment {
   font-family: 'Inter', sans-serif;
   resize: none;
@@ -55,43 +71,6 @@
   font-size: 16px;
   line-height: 1.25;
   color: rgba(16, 24, 40, 0.6);
-}
-
-.book_data_conteiner {
-  position: relative;
-  width: 228px;
-  margin-bottom: 14px;
-}
-
-.book_calendar {
-  padding: 16px;
-  margin-top: 5px;
-  border: 1px solid rgba(16, 24, 40, 0.2);
-  border-radius: 12px;
-  background-color: #fff;
-}
-
-.book_input_date {
-  outline: none;
-  padding: 14px;
-  width: 228px;
-  border: none;
-  border-radius: 10px;
-  background-color: var(--inputs);
-
-  font-size: 16px;
-  line-height: 1.25;
-  color: var(--main);
-}
-
-.book_calendar_btn {
-  position: absolute;
-  top: 50%;
-  right: 14px;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  padding: 0;
 }
 
 .book_send_button {
@@ -124,12 +103,8 @@
     width: 400px;
   }
 
-  .book_data_conteiner {
-    width: 428px;
-  }
-
-  .book_input_date {
-    width: 428px;
+  .book_calendar {
+    width: 400px;
   }
 
   .book_input_comment {
