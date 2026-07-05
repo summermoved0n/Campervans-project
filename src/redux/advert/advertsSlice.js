@@ -38,15 +38,15 @@ const advertsSlice = createSlice({
     builder
       .addCase(getAdvertsThunk.fulfilled, (state, { payload }) => {
         state.adverts.catalog = payload;
-        state.isLoading = false;
+        state.adverts.isLoading = false;
       })
       .addMatcher(isAnyOf(getAdvertsThunk.pending), state => {
-        state.isLoading = true;
-        state.error = null;
+        state.adverts.isLoading = true;
+        state.adverts.error = null;
       })
       .addMatcher(isAnyOf(getAdvertsThunk.rejected), (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
+        state.adverts.isLoading = false;
+        state.adverts.error = payload;
       }),
 });
 
